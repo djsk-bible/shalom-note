@@ -1,7 +1,7 @@
 /* 샬롬 말씀노트 서비스워커
    CORE: 앱 화면·아이콘 (새 버전마다 새로 받음)
    STATIC: 성경·글꼴 (내용이 바뀌지 않으면 다시 받지 않음 · 글꼴은 파일 이름에 내용 표시가 붙어 있음) */
-const CORE='shalom-core-v50-6bf87ef4',STATIC='shalom-static-8f6775ae';
+const CORE='shalom-core-v51-7fc99f53',STATIC='shalom-static-8f6775ae';
 const COREF=["./", "index.html", "manifest.webmanifest", "apple-touch-icon.png", "icon-192.png", "icon-512.png", "maskable-512.png"],STATICF=["NotoSerifKR-500.f7bd1622.woff2", "NotoSerifKR-700.08911847.woff2", "poor-story.83487869.woff2", "pret-Regular.89f1d362.woff2", "pret-SemiBold.7a08d4b0.woff2", "bible.8f6775ae.json"];
 self.addEventListener('install',e=>{e.waitUntil((async()=>{
   const c=await caches.open(CORE);await c.addAll(COREF.map(f=>new Request(f,{cache:'reload'})));
